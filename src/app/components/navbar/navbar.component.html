@@ -6,17 +6,20 @@
 
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#" routerLink='/'>Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item" [class.active]="currentRoute=='/'">
+        <a class="nav-link" href="#" routerLink='/'>Home <span *ngIf="currentRoute == '/'" class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" routerLink='/login'>Login</a>
+      <li class="nav-item" [class.active]="currentRoute=='/dashboard'" *ngIf="authService.authenticated">
+        <a class="nav-link" href="#" routerLink='/dashboard'>Dashboard <span *ngIf="currentRoute == '/dashboard'" class="sr-only">(current)</span></a>
+      </li>     
+      <li class="nav-item" [class.active]="currentRoute=='/login'" *ngIf="!authService.authenticated">
+        <a class="nav-link" href="#" routerLink='/login'>Login <span *ngIf="currentRoute == '/login'" class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" routerLink='/register'>Register</a>
+      <li class="nav-item" [class.active]="currentRoute=='/register'" *ngIf="!authService.authenticated">
+        <a class="nav-link" href="#" routerLink='/register'>Register <span *ngIf="currentRoute == '/register'" class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Logout</a>
+      <li class="nav-item" *ngIf="authService.authenticated">
+        <a class="nav-link" href="#" (click)="authService.signOut()">Logout</a>
       </li>
     </ul>
   </div>
