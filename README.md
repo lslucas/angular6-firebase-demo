@@ -12,6 +12,8 @@ You can use Docker, for that check the instructions bellow.
 
 ## Docker
 
+Assuming you have docker and git installed:
+
 ```bash
 $ git clone git@github.com:lslucas/angular6-firebase-demo.git
 $ cd angular6-firebase-demo
@@ -21,5 +23,5 @@ $ docker run -it \
 -v /www/node_modules \
 -p 4200:4200 \
 --rm \
-angular-firebase-demo
+angular6-firebase-demo
 ```
