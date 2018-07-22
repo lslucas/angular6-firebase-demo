@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 It is a simple project that uses Angular 6, Firebase and Boostrap for a templating.
+Demo Project URL: https://api-project-307902130548.firebaseapp.com
 
 ## Development server
 
